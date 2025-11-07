@@ -12,7 +12,7 @@ struct RotAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            WelcomeFlowView()
                 .environmentObject(container)
         }
     }

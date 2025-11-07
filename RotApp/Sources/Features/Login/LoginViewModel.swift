@@ -53,4 +53,8 @@ final class LoginViewModel: ObservableObject {
     func consumeSuccess() {
         state.isSuccess = false
     }
+
+    func handleForgotPasswordTap() {
+        state.errorMessage = "Funcionalidad aún no disponible"
+    }
 }
