@@ -9,5 +9,5 @@ import Foundation
 
 @MainActor
 final class CreateCompanyViewModel: ObservableObject {
-    // TODO: Migrar lógica desde CreateCompanyViewModel de Android.
+    // TODO: Migrar lógica desde CreateCompanyViewMol
 }

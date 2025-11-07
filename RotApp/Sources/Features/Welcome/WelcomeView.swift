@@ -45,10 +45,7 @@ struct WelcomeView: View {
     }
 }
 
-#Preview
-struct WelcomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomeView()
-            .environmentObject(AppContainer())
-    }
+#Preview {
+    WelcomeView()
+        .environmentObject(AppContainer())
 }

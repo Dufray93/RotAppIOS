@@ -20,3 +20,7 @@ struct AboutView: View {
         .padding()
     }
 }
+
+#Preview {
+    AboutView()
+}

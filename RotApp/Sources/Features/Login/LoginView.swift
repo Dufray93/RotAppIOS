@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject private var container: AppContainer
     @StateObject private var viewModel: LoginViewModel
 
     var onBack: () -> Void = {}
     var onLoginSuccess: () -> Void = {}
 
-    init(onBack: @escaping () -> Void = {},
+    init(userService: UserService,
+         onBack: @escaping () -> Void = {},
          onLoginSuccess: @escaping () -> Void = {}) {
         self.onBack = onBack
         self.onLoginSuccess = onLoginSuccess
-        _viewModel = StateObject(wrappedValue: LoginViewModel(userService: containerPlaceholder))
+        _viewModel = StateObject(wrappedValue: LoginViewModel(userService: userService))
     }
 
     var body: some View {
@@ -77,14 +77,9 @@ struct LoginView: View {
     }
 }
 
-// MARK: - Preview Helper
+// MARK: - Preview
 
-private let containerPlaceholder: UserService = UserServiceMock()
-
-#Preview
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-            .environmentObject(AppContainer())
-    }
+#Preview {
+    let container = AppContainer()
+    return LoginView(userService: container.userService)
 }
